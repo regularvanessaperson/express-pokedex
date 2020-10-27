@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const db = require("./models");
 
+app.use(express.static(__dirname + '/public'));
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
@@ -24,9 +25,6 @@ app.get('/', function(req, res) {
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
 
-// app.get('/pokemon', require('./routes/pokemon'));
-
-// app.post('/pokemon', require('/routes/pokemon'));
 
 
 const server = app.listen(port, function() {
