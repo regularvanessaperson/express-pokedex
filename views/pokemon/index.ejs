@@ -1,10 +1,10 @@
 <h1 class="header" style="text-align: center;">Favorite Pokemon!</h1>
-<h3 style="text-align: center;">Click on the name for more details.</h3>
+<h3 class="header" style="text-align: center;">Click on the name for more details.</h3>
 
 <form method="GET" action="/pokemon"></form>
 <div class="favorites">
 <% favorites.forEach(favoritePokemon =>{ %>
-   <p class="favorite"> <a href="/pokemon/<%= favoritePokemon.name %>"> <%= favoritePokemon.name %> </a></p>
+   <p class="favorite"> <a class ="fave_pokemon" href="/pokemon/<%= favoritePokemon.name %>"> <%= favoritePokemon.name %> </a></p>
    
 <%})%> 
 </div>
