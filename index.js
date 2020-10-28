@@ -14,7 +14,8 @@ app.use(ejsLayouts);
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  const pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  const pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
+  console.log("params show:",req.params)
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
     const pokemon = apiResponse.data.results;

@@ -24,6 +24,7 @@ router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
 });
 
+
 router.get('/:id', (req, res)=>{
   let pokeId = req.params.id
   console.log(req.params)
@@ -33,6 +34,7 @@ router.get('/:id', (req, res)=>{
     console.log("this is pokeInfo:",response.data)
     res.render('pokemon/show.ejs', {pokeInfo: pokeInfo})
   })
+
 
 })
 

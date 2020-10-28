@@ -1,13 +1,28 @@
-<h1> Show page</h1>
-
-<img src= <%=pokeInfo.sprites.other["official-artwork"].front_default%>>
-Name: <%=pokeInfo.name%>
-Height: <%=pokeInfo.height%> 
-Type: <%pokeInfo.types.forEach(type=>{ %>
+<body class="show_body">
+<div class="show_div">
+    <div class= "picture_div">
+        <h1> <%=pokeInfo.name%>: <%=pokeInfo.id%> </h1>
+        <img class="picture" src= <%=pokeInfo.sprites.other["official-artwork"].front_default%>>
+    </div>
+<div class="all_info_div"> 
+<div  class="info">
+    <h3>Info:</h3>  
+    <br>
+    <br>
+    Height: <%=pokeInfo.height%> decimetres<br>
+    Weight: <%=pokeInfo.weight%> hectograms<br>
+    Pokemon Type: <%pokeInfo.types.forEach(type=>{ %>
     <%= type.type.name%>
     <%}) %> 
-
+</div>
+    <div class= "moves">
+    <h3>Attacks:</h3>
+    <ul>    
     <% pokeInfo.moves.forEach(pokemon=>{ %>
-         <p> <%= pokemon.move.name %></p>
-
-<%}) %> 
+        <li class="moves_list"> <%= pokemon.move.name %>, </li>
+    <%}) %> 
+    </ul>
+    </div>
+</div>  
+</div>
+</body>
